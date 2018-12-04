@@ -1,12 +1,10 @@
-[![Build Status](https://travis-ci.org/markus-perl/ffmpeg-build-script.svg?branch=master)](https://travis-ci.org/markus-perl/ffmpeg-build-script)
-
 ![Image of Yaktocat](https://raw.github.com/markus-perl/ffmpeg-build-script/master/ffmpeg-build-script.png)
 
 
-build-ffmpeg
+build-ffmpeg (Plus Nvidia headers)
 ==========
 
-The FFmpeg build script provides an easy way to build a static ffmpeg on **OSX** and **Linux** with **non-free codecs** included.
+The FFmpeg build script provides an easy way to build a static ffmpeg on **OSX** and **Linux** with **non-free codecs** included. **This Fork enables to use it in CentOS 7 and enables the NVIDIA Codecs**
 
 
 [![How-To build FFmpeg on OSX](http://img.youtube.com/vi/Z9p3mM757cM/0.jpg)](http://www.youtube.com/watch?v=Z9p3mM757cM "How-To build FFmpeg on OSX")
@@ -14,7 +12,7 @@ The FFmpeg build script provides an easy way to build a static ffmpeg on **OSX**
 *Youtube: How-To build and install FFmpeg on OSX*
 
 ## Disclaimer
-Use this script at your own risk. I maintain this script in my spare time. 
+Use this script at your own risk. I maintain this script in my spare time.
 Please do not file bug reports for systems other than Debian 9 and macOS 10.13
 because I don't have the resources and the time to maintain other systems.
 
@@ -22,13 +20,14 @@ because I don't have the resources and the time to maintain other systems.
 ## Supported Codecs
 * x264: H.264 (MPEG-4 AVC)
 * x265: H.265 Video Codec
-* fdk_aac: Fraunhofer FDK AAC Codec 
+* fdk_aac: Fraunhofer FDK AAC Codec
 * xvidcore: MPEG-4 video coding standard
 * webm: WebM is a video file format
 * mp3: MPEG-1 or MPEG-2 Audio Layer III
 * ogg: Free, open container format
 * vorbis: Lossy audio compression format
 * theora: Free lossy video compression format
+* NVENC|CUVID: Nvidia Codecs for GPU usage.
 
 ## Continuos Integration
 ffmpeg-build-script is rockstable. Every commit runs against Linux and OSX with https://travis-ci.org just to make sure everything works as expected.
@@ -43,12 +42,18 @@ Requirements Linux
 * Debian >= Wheezy, Ubuntu => Trusty, other Distros might work too
 * build-essentials installed:
 
+* CentOS >= 7
+* [NVIDIA CUDA Drivers](https://developer.nvidia.com/cuda-downloads)
+
 ```
 # Debian and Ubuntu
 sudo apt-get install build-essential curl g++
 
 # Fedora
 sudo dnf install @development-tools
+
+# CentOS
+sudo yum install autoconf automake bzip2 cmake freetype-devel gcc gcc-c++ git libtool make mercurial pkgconfig zlib-devel
 ```
 
 Installation
@@ -91,7 +96,7 @@ Tested on
 
 * Mac OSX 10.13 64Bit XCode 9.3
 * Debian 9.4
-
+* Centos 7
 Example
 -------
 
