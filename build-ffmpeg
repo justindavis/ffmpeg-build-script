@@ -396,7 +396,7 @@ cd $PACKAGES/ffmpeg-192d1d3/ || exit
 	--disable-shared \
 	--disable-ffplay \
 	--disable-doc \
-	--enable-openssl \
+	--disable-openssl \
 	--enable-gpl \
 	--enable-version3 \
 	--enable-nonfree \
@@ -415,7 +415,7 @@ cd $PACKAGES/ffmpeg-192d1d3/ || exit
 	--enable-libopencore_amrnb \
 	--enable-filters \
 	--enable-libvidstab \
-	--enable-libaom
+	--disable-libaom
 
 execute make -j $MJOBS
 execute make install
