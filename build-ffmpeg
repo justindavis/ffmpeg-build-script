@@ -11,6 +11,7 @@ LDFLAGS="-L${WORKSPACE}/lib -lm"
 CFLAGS="-I${WORKSPACE}/include"
 PKG_CONFIG_PATH="${WORKSPACE}/lib/pkgconfig"
 ADDITIONAL_CONFIGURE_OPTIONS=""
+AUTOINSTALL = "yes"
 
 # Speed up the process
 # Env Var NUMJOBS overrides automatic detection
