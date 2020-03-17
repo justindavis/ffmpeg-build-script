@@ -149,6 +149,8 @@ make_dir $PACKAGES
 make_dir $WORKSPACE
 
 export PATH=${WORKSPACE}/bin:$PATH
+export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 if ! command_exists "make"; then
     echo "make not installed.";
