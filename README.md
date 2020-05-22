@@ -256,6 +256,7 @@ Building done. The binary can be found here: /Volumes/Daten/dev/mac/ffmpeg-build
 Install the binary to your /usr/local/bin folder? [Y/n] y
 Password:
 ```
+    
 
 Other Projects Of Mine
 ------------
